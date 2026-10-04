@@ -1,0 +1,1067 @@
+{
+  "database": "tanimaju_demo_20261003_final5",
+  "checkedAt": "2026-10-03T16:56:29.929Z",
+  "browser": "Real Chrome CDP, React + running development Express + MySQL",
+  "suffix": "46556250",
+  "email": "runtime46556250@demo.tanimaju.test",
+  "checks": [
+    {
+      "name": "Public / renders content and visible images",
+      "status": "PASS"
+    },
+    {
+      "name": "Public /about renders content and visible images",
+      "status": "PASS"
+    },
+    {
+      "name": "Public /blog renders content and visible images",
+      "status": "PASS"
+    },
+    {
+      "name": "Public /order renders content and visible images",
+      "status": "PASS"
+    },
+    {
+      "name": "Public /login renders content and visible images",
+      "status": "PASS"
+    },
+    {
+      "name": "Public /register renders content and visible images",
+      "status": "PASS"
+    },
+    {
+      "name": "Public Blog and Product navigation opens uploaded dummy details",
+      "status": "PASS",
+      "retest": {
+        "checkedAt": "2026-10-03T16:56:01.188Z",
+        "original": "Browser condition timed out: (() => { const el=document.querySelector(\"[data-detail=\\\"true\\\"]\"); el.scrollIntoView({block:'center'}); const r=el.getBoundingClientRect(); const hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2); return r.width>0 && r.height>0 && (hit===el || el.contains(hit)); })()"
+      }
+    },
+    {
+      "name": "Register creates pending dummy; admin approval through UI",
+      "status": "PASS",
+      "retest": {
+        "checkedAt": "2026-10-03T16:56:07.713Z",
+        "original": "Error: Missing row action\n    at <anonymous>:1:226\n    at <anonymous>:1:297"
+      }
+    },
+    {
+      "name": "Admin page/list /admin",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin page/list /admin/petani",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin page/list /admin/tanaman",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin page/list /admin/bibit",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin page/list /admin/lahan",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin page/list /admin/panen",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin page/list /admin/aktivitas-pertanian",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin page/list /admin/user-approval",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin page/list /admin/item",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin page/list /admin/posts",
+      "status": "PASS"
+    },
+    {
+      "name": "Dashboard month/year/30 days/custom + empty charts",
+      "status": "PASS"
+    },
+    {
+      "name": "Tanaman browser create/edit/search/delete dummy",
+      "status": "PASS"
+    },
+    {
+      "name": "Bibit browser create/edit/search/delete dummy",
+      "status": "PASS"
+    },
+    {
+      "name": "Petani browser create/edit/search/delete dummy with photo",
+      "status": "PASS"
+    },
+    {
+      "name": "Lahan browser create/edit/search/status filter/delete dummy",
+      "status": "PASS"
+    },
+    {
+      "name": "Panen browser create/edit/search/status filter/delete dummy",
+      "status": "PASS",
+      "retest": {
+        "checkedAt": "2026-10-03T16:56:14.993Z",
+        "original": "Browser condition timed out: document.querySelector('#amount')?.value==='987654'"
+      }
+    },
+    {
+      "name": "Product browser image upload/create/edit/search/delete dummy",
+      "status": "PASS"
+    },
+    {
+      "name": "Blog browser image upload/create/edit/search/delete dummy",
+      "status": "PASS"
+    },
+    {
+      "name": "Siklus browser create and filter; API delete only newly created ID",
+      "status": "PASS",
+      "retest": {
+        "checkedAt": "2026-10-03T16:56:17.149Z",
+        "original": "Browser condition timed out: !![...document.querySelector(\"form select[aria-label=\\\"Tanaman\\\"]\").options].find(el=>el.value===\"1\")"
+      }
+    },
+    {
+      "name": "Aktivitas browser create/search/type filter/delete dummy",
+      "status": "PASS"
+    },
+    {
+      "name": "Tanaman search + real next/previous pagination + sort",
+      "status": "PASS"
+    },
+    {
+      "name": "Browser downloads and opens panen CSV + Excel",
+      "status": "PASS",
+      "retest": {
+        "checkedAt": "2026-10-03T16:56:19.446Z",
+        "original": "Browser condition timed out: !!document.querySelector(\"[aria-label=\"Format export\"]\")"
+      }
+    },
+    {
+      "name": "Browser downloads and opens aktivitas CSV + Excel",
+      "status": "PASS",
+      "retest": {
+        "checkedAt": "2026-10-03T16:56:22.923Z",
+        "original": "Browser condition timed out: !!document.querySelector(\"[aria-label=\"Format export\"]\")"
+      }
+    },
+    {
+      "name": "Browser downloads and opens petani CSV + Excel",
+      "status": "PASS",
+      "retest": {
+        "checkedAt": "2026-10-03T16:56:25.005Z",
+        "original": "Browser condition timed out: !!document.querySelector(\"[aria-label=\"Format export\"]\")"
+      }
+    },
+    {
+      "name": "Browser downloads and opens tanaman CSV + Excel",
+      "status": "PASS",
+      "retest": {
+        "checkedAt": "2026-10-03T16:56:27.090Z",
+        "original": "Browser condition timed out: !!document.querySelector(\"[aria-label=\"Format export\"]\")"
+      }
+    },
+    {
+      "name": "Browser downloads and opens lahan CSV + Excel",
+      "status": "PASS",
+      "retest": {
+        "checkedAt": "2026-10-03T16:56:29.928Z",
+        "original": "Browser condition timed out: !!document.querySelector(\"[aria-label=\"Format export\"]\")"
+      }
+    },
+    {
+      "name": "Admin bell loads own empty state",
+      "status": "PASS"
+    },
+    {
+      "name": "Logout clears UI and protects admin route",
+      "status": "PASS"
+    },
+    {
+      "name": "Petani linked profile/dashboard/own harvest; no admin menu",
+      "status": "PASS"
+    },
+    {
+      "name": "Petani own land/cycles/activities and scoped browser CSV download",
+      "status": "PASS"
+    },
+    {
+      "name": "Notifications bell/badge/four types/mark read/read all",
+      "status": "PASS"
+    },
+    {
+      "name": "Responsive 375px: dashboard/table/filter/bell/form/buttons",
+      "status": "PASS"
+    },
+    {
+      "name": "Responsive 768px: dashboard/table/filter/bell/form/buttons",
+      "status": "PASS"
+    },
+    {
+      "name": "Penyuluh read-only farming and blocked users/admin write pages",
+      "status": "PASS"
+    },
+    {
+      "name": "Browser has no unhandled exception, unexpected API error or CORS failure",
+      "status": "PASS",
+      "retest": {
+        "checkedAt": "2026-10-03T16:56:29.929Z",
+        "original": "PASS"
+      }
+    }
+  ],
+  "created": [
+    {
+      "path": "siklus-tanam",
+      "id": 8
+    }
+  ],
+  "downloads": [
+    {
+      "filename": "laporan-panen-2026-10-03.csv",
+      "state": "completed",
+      "bytes": 452
+    },
+    {
+      "filename": "laporan-panen-2026-10-03.xlsx",
+      "state": "completed",
+      "bytes": 10206
+    },
+    {
+      "filename": "laporan-aktivitas-2026-10-03.csv",
+      "state": "completed",
+      "bytes": 782
+    },
+    {
+      "filename": "laporan-aktivitas-2026-10-03.xlsx",
+      "state": "completed",
+      "bytes": 10711
+    },
+    {
+      "filename": "laporan-petani-2026-10-03.csv",
+      "state": "completed",
+      "bytes": 328
+    },
+    {
+      "filename": "laporan-petani-2026-10-03.xlsx",
+      "state": "completed",
+      "bytes": 10224
+    },
+    {
+      "filename": "laporan-tanaman-2026-10-03.csv",
+      "state": "completed",
+      "bytes": 1041
+    },
+    {
+      "filename": "laporan-tanaman-2026-10-03.xlsx",
+      "state": "completed",
+      "bytes": 11111
+    },
+    {
+      "filename": "laporan-lahan-2026-10-03.csv",
+      "state": "completed",
+      "bytes": 467
+    },
+    {
+      "filename": "laporan-lahan-2026-10-03.xlsx",
+      "state": "completed",
+      "bytes": 10317
+    }
+  ],
+  "exceptions": [],
+  "console": [
+    {
+      "type": "error",
+      "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+    },
+    {
+      "type": "error",
+      "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+    },
+    {
+      "type": "error",
+      "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+    },
+    {
+      "type": "error",
+      "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+    },
+    {
+      "type": "error",
+      "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+    },
+    {
+      "type": "error",
+      "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+    },
+    {
+      "type": "error",
+      "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+    },
+    {
+      "type": "error",
+      "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+    }
+  ],
+  "network": [
+    {
+      "url": "http://localhost:5310/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "http://localhost:5310/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "http://localhost:5310/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "http://localhost:5310/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "http://localhost:5310/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "http://localhost:5310/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "http://localhost:5310/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "http://localhost:5310/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "http://localhost:5310/api/notifications/unread-count",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/dashboard/admin",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/notifications/unread-count",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/notifications/unread-count",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/notifications/unread-count",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/notifications/unread-count",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/notifications/unread-count",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/notifications/unread-count",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/reminders",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/notifications/unread-count",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/notifications/unread-count",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/notifications/unread-count",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/reminders",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/notifications/unread-count",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/reminders",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/notifications/unread-count",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/notifications/unread-count",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/notifications/unread-count",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/notifications/unread-count",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/notifications/unread-count",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    },
+    {
+      "url": "http://localhost:5310/api/notifications/unread-count",
+      "error": "net::ERR_ABORTED",
+      "canceled": true
+    }
+  ],
+  "previousDiagnostics": {
+    "checkedAt": "2026-10-03T16:54:02.054Z",
+    "console": [
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Error: Mapbox token is not provided. Please check your .env file."
+      },
+      {
+        "type": "error",
+        "text": "Error: Mapbox token is not provided. Please check your .env file."
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      },
+      {
+        "type": "error",
+        "text": "Auth check failed: ApiError: Sesi Anda berakhir. Silakan masuk kembali.\n    at apiFetch (http://localhost:5180/src/lib/api.ts:35:9)\n    at async http://localhost:5180/src/context/AuthContext.tsx:37:24"
+      }
+    ],
+    "network": [
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/dashboard/admin",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/dashboard/admin",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/reminders",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/dashboard/admin",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/petani",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/reminders",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/reminders",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/reminders",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/dashboard/admin",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/dashboard/petani",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/reminders",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/dashboard/petani",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/dashboard/petani",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/reminders",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/dashboard/petani",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/reminders",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/auth/me",
+        "status": 401
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/reminders",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      },
+      {
+        "url": "http://localhost:5310/api/notifications/unread-count",
+        "error": "net::ERR_ABORTED",
+        "canceled": true
+      }
+    ],
+    "exceptions": []
+  },
+  "expectedDiagnostics": [
+    "401 /auth/me without authenticated cookie",
+    "Auth check console message for expected anonymous 401",
+    "Mapbox missing token: external map unavailable",
+    "net::ERR_ABORTED with canceled=true when React aborts old requests"
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "database": "tanimaju_demo_20261003_final5",
+  "checks": [
+    {
+      "name": "Linked Panen retains land/cycle when amount edited in browser",
+      "status": "BUG_REPRODUCED",
+      "checkedAt": "2026-10-03T17:07:14.734Z",
+      "before": {
+        "lahan_id": 1,
+        "siklus_tanam_id": 10
+      },
+      "after": {
+        "lahan_id": null,
+        "siklus_tanam_id": null
+      },
+      "created": [
+        {
+          "path": "siklus-tanam",
+          "id": 10
+        },
+        {
+          "path": "panen",
+          "id": 7
+        }
+      ]
+    },
+    {
+      "name": "Linked Panen retains land/cycle when amount edited in browser",
+      "status": "PASS",
+      "checkedAt": "2026-10-03T17:07:47.360Z",
+      "before": {
+        "lahan_id": 1,
+        "siklus_tanam_id": 11
+      },
+      "after": {
+        "lahan_id": 1,
+        "siklus_tanam_id": 11
+      },
+      "created": [
+        {
+          "path": "siklus-tanam",
+          "id": 11
+        },
+        {
+          "path": "panen",
+          "id": 8
+        }
+      ]
+    },
+    {
+      "name": "Legacy Panen remains editable with nullable links",
+      "status": "PASS",
+      "checkedAt": "2026-10-03T17:09:04.617Z",
+      "before": {
+        "lahan_id": null,
+        "siklus_tanam_id": null
+      },
+      "after": {
+        "lahan_id": null,
+        "siklus_tanam_id": null
+      },
+      "created": [
+        {
+          "path": "siklus-tanam",
+          "id": 12
+        },
+        {
+          "path": "panen",
+          "id": 9
+        }
+      ]
+    }
+  ],
+  "cleanup": "Only the two new regression rows deleted; no pre-existing record modified."
+}

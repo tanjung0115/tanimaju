@@ -1,0 +1,96 @@
+{
+  "database": "tanimaju_demo_20261003_final5",
+  "checkedAt": "2026-10-03T15:57:07.049Z",
+  "browser": "Chrome headless via CDP; real React UI + Express + MySQL",
+  "checks": [
+    {
+      "name": "Landing page renders public content",
+      "status": "PASS"
+    },
+    {
+      "name": "Register form, pending approval and denied pending login",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin login opens populated dashboard",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin approval with confirmation dialog",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin creates Petani without photo and links approved user",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin Tanaman create form and persisted list",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin Bibit create form and persisted list",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin Lahan create/edit and live list refresh",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin Siklus Tanam form creates persisted cycle",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin Aktivitas form creates monitoring event",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin Panen form persists and dashboard updates",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin report/export downloads CSV via UI",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin notification bell shows own empty state",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin logout clears authenticated UI",
+      "status": "PASS"
+    },
+    {
+      "name": "Petani login opens personal dashboard and only own panels",
+      "status": "PASS"
+    },
+    {
+      "name": "Petani Lahan Saya/Siklus Saya/Aktivitas Saya/Panen Saya",
+      "status": "PASS"
+    },
+    {
+      "name": "Petani can submit own activity and export scoped data via UI",
+      "status": "PASS"
+    },
+    {
+      "name": "Petani notification panel, unread count, read and read-all",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile dashboard/drawer keyboard, no page overflow (390px)",
+      "status": "PASS"
+    },
+    {
+      "name": "Penyuluh login, read-only farming and blocked admin route",
+      "status": "PASS"
+    },
+    {
+      "name": "No uncaught browser JavaScript exceptions",
+      "status": "PASS"
+    }
+  ],
+  "limitations": [
+    "Automated browser interaction; human manual sign-off remains pending.",
+    "No successful destructive actions executed.",
+    "Screenshot data is fictitious."
+  ]
+}

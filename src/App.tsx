@@ -1,0 +1,313 @@
+import { lazy, Suspense } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ProtectedRoute from "@/components/ProtectedRoute";
+import { LoadingScreen } from "@/components/LoadingSpinner";
+import { AuthProvider } from "@/context/AuthContext";
+import { NotificationProvider } from "@/context/NotificationContext";
+import { useAppPreload } from "@/hooks/useAppPreload";
+
+// Lazy load all the page components
+const Home = lazy(() => import("./pages/home/Home"));
+const About = lazy(() => import("./pages/about/About"));
+const Order = lazy(() => import("./pages/order/Order"));
+const ProductDetail = lazy(() => import("./pages/order/ProductDetail"));
+const Blog = lazy(() => import("./pages/blog/Blog"));
+const BlogPost = lazy(() => import("@/pages/blog/BlogPost"));
+const NotFound = lazy(() => import("@/pages/notfound"));
+const Admin = lazy(() => import("@/pages/dashboard/Admin"));
+const PetaniDashboard = lazy(() => import("@/pages/dashboard/PetaniDashboard"));
+const Panen = lazy(
+  () => import("@/pages/dashboard/slug_pages/PanenPage/Panen")
+);
+const CreatePanen = lazy(
+  () => import("@/pages/dashboard/slug_pages/PanenPage/CreatePanen")
+);
+const EditPanen = lazy(
+  () => import("@/pages/dashboard/slug_pages/PanenPage/EditPanen")
+);
+const Item = lazy(() => import("@/pages/dashboard/slug_pages/Produk/item"));
+const CreateItem = lazy(
+  () => import("@/pages/dashboard/slug_pages/Produk/CreateItem")
+);
+const EditItem = lazy(
+  () => import("@/pages/dashboard/slug_pages/Produk/EditItem")
+);
+const Petani = lazy(() => import("@/pages/dashboard/slug_pages/Petani/Petani"));
+const CreatePetani = lazy(
+  () => import("@/pages/dashboard/slug_pages/Petani/CreatePetani")
+);
+const EditPetani = lazy(
+  () => import("@/pages/dashboard/slug_pages/Petani/EditPetani")
+);
+const Lahan = lazy(() => import("@/pages/dashboard/slug_pages/Lahan/Lahan"));
+const AktivitasPertanian = lazy(() => import("@/pages/dashboard/slug_pages/AktivitasPertanian/AktivitasPertanian"));
+const Bibit = lazy(() => import("@/pages/dashboard/slug_pages/Bibit/Bibit"));
+const CreateBibit = lazy(
+  () => import("@/pages/dashboard/slug_pages/Bibit/CreateBibit")
+);
+const EditBibit = lazy(
+  () => import("@/pages/dashboard/slug_pages/Bibit/EditBibit")
+);
+const Tanaman = lazy(
+  () => import("@/pages/dashboard/slug_pages/Tanaman/Tanaman")
+);
+const CreateTanaman = lazy(
+  () => import("@/pages/dashboard/slug_pages/Tanaman/CreateTanaman")
+);
+const EditTanaman = lazy(
+  () => import("@/pages/dashboard/slug_pages/Tanaman/EditTanaman")
+);
+const Posts = lazy(() => import("@/pages/dashboard/slug_pages/Post/Posts"));
+const CreatePosts = lazy(
+  () => import("@/pages/dashboard/slug_pages/Post/CreatePost")
+);
+const EditPosts = lazy(
+  () => import("@/pages/dashboard/slug_pages/Post/EditPost")
+);
+const Login = lazy(() => import("@/pages/Login"));
+const Register = lazy(() => import("@/pages/Register"));
+const Unauthorized = lazy(() => import("@/pages/Unauthorized"));
+const UserApproval = lazy(() => import("@/pages/dashboard/UserApproval"));
+const ResetPassword = lazy(() => import("@/pages/dashboard/ResetPassword"));
+const MyRatings = lazy(
+  () => import("@/pages/dashboard/slug_pages/MyRatings/MyRatings")
+);
+
+function AppContent() {
+  // Preload critical images on app startup
+  useAppPreload();
+
+  return (
+    <Suspense fallback={<LoadingScreen />}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/order" element={<Order />} />
+        <Route path="/order/:slug" element={<ProductDetail />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/unauthorized" element={<Unauthorized />} />
+
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute requireAdmin>
+              <Admin />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/petani"
+          element={
+            <ProtectedRoute exactRoles={["petani"]}>
+              <PetaniDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/user-approval"
+          element={
+            <ProtectedRoute requireAdmin>
+              <UserApproval />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/reset-password"
+          element={
+            <ProtectedRoute requireAdmin>
+              <ResetPassword />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/my-ratings"
+          element={
+            <ProtectedRoute>
+              <MyRatings />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/panen"
+          element={
+            <ProtectedRoute allowedRoles={["admin", "penyuluh"]}>
+              <Panen />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/panen/create"
+          element={
+            <ProtectedRoute requireAdmin>
+              <CreatePanen />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/panen/edit/:id"
+          element={
+            <ProtectedRoute requireAdmin>
+              <EditPanen />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/item"
+          element={
+            <ProtectedRoute requireAdmin={true}>
+              <Item />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/item/create"
+          element={
+            <ProtectedRoute requireAdmin={true}>
+              <CreateItem />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/item/edit/:id"
+          element={
+            <ProtectedRoute requireAdmin={true}>
+              <EditItem />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/petani"
+          element={
+            <ProtectedRoute allowedRoles={["admin", "penyuluh"]}>
+              <Petani />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/petani/create"
+          element={
+            <ProtectedRoute requireAdmin>
+              <CreatePetani />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/petani/edit/:id"
+          element={
+            <ProtectedRoute requireAdmin>
+              <EditPetani />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/lahan"
+          element={
+            <ProtectedRoute exactRoles={["admin", "petani", "penyuluh"]}>
+              <Lahan />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/aktivitas-pertanian"
+          element={
+            <ProtectedRoute exactRoles={["admin", "petani", "penyuluh"]}>
+              <AktivitasPertanian />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/bibit"
+          element={
+            <ProtectedRoute allowedRoles={["admin", "penyuluh"]}>
+              <Bibit />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/bibit/create"
+          element={
+            <ProtectedRoute requireAdmin>
+              <CreateBibit />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/bibit/edit/:id"
+          element={
+            <ProtectedRoute requireAdmin>
+              <EditBibit />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/tanaman"
+          element={
+            <ProtectedRoute allowedRoles={["admin", "penyuluh"]}>
+              <Tanaman />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/tanaman/create"
+          element={
+            <ProtectedRoute requireAdmin>
+              <CreateTanaman />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/tanaman/edit/:id"
+          element={
+            <ProtectedRoute requireAdmin>
+              <EditTanaman />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/posts"
+          element={
+            <ProtectedRoute requireAdmin>
+              <Posts />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/posts/create"
+          element={
+            <ProtectedRoute requireAdmin>
+              <CreatePosts />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/posts/edit/:id"
+          element={
+            <ProtectedRoute requireAdmin>
+              <EditPosts />
+            </ProtectedRoute>
+          }
+        />
+        {/* Catch-all route for 404 Not Found */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Suspense>
+  );
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <NotificationProvider>
+        <Router>
+          <AppContent />
+        </Router>
+      </NotificationProvider>
+    </AuthProvider>
+  );
+}
+
+export default App;

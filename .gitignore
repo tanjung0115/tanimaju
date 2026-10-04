@@ -1,0 +1,38 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+.env
+generateHash.js
+user-migration.sql
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local environment variants and runtime uploads (tracked examples remain visible).
+.env.*
+!.env.example
+!.env.*.example
+backend/uploads/
+.validation/
+
+# Temporary browser failure captures; final demo screenshots remain versioned.
+docs/screenshots/runtime/failure-*.png
+docs/screenshots/runtime/retry-failure-*.png

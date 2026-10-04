@@ -1,0 +1,992 @@
+{
+  "database": "tanimaju_demo_20261003_final5",
+  "checkedAt": "2026-10-03T16:45:56.329Z",
+  "mysql": "8.0.44",
+  "checks": [
+    {
+      "name": "Schema 001-013, important tables and three linked demo roles",
+      "status": "PASS"
+    },
+    {
+      "name": "Petani create/read/edit real API",
+      "status": "PASS"
+    },
+    {
+      "name": "Tanaman create/read/edit real API",
+      "status": "PASS"
+    },
+    {
+      "name": "Bibit create/read/edit real API",
+      "status": "PASS"
+    },
+    {
+      "name": "Lahan create/read/edit real API",
+      "status": "PASS"
+    },
+    {
+      "name": "Siklus create/read/edit real API (existing UI has no editor)",
+      "status": "PASS"
+    },
+    {
+      "name": "Aktivitas create/read/edit real API (existing UI has no editor)",
+      "status": "PASS"
+    },
+    {
+      "name": "Panen linked create/read/edit real API",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin deletes ONLY the seven newly created dummy records",
+      "status": "PASS"
+    },
+    {
+      "name": "Real two-page search/pagination and sorting fixtures",
+      "status": "PASS",
+      "retest": {
+        "checkedAt": "2026-10-03T16:51:03.450Z",
+        "cause": "Validation script assumption corrected; no application change",
+        "original": "Expected values to be strictly equal:\n\nundefined !== 21\n"
+      }
+    },
+    {
+      "name": "Public Product and Blog seeded via image upload, edit and fetch",
+      "status": "PASS"
+    },
+    {
+      "name": "Petani A own new cycle/activity plus date validation",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual IDOR: A cannot read/update B land, cycle, activity",
+      "status": "PASS"
+    },
+    {
+      "name": "Penyuluh reads all permitted lists; POST/PUT/DELETE and users denied",
+      "status": "PASS"
+    },
+    {
+      "name": "Dashboard aggregates equal MySQL, empty date range has no harvest",
+      "status": "PASS",
+      "retest": {
+        "checkedAt": "2026-10-03T16:51:03.556Z",
+        "cause": "Validation script assumption corrected; no application change",
+        "original": "Unknown column 'tanggal_panen' in 'where clause'"
+      }
+    },
+    {
+      "name": "All five CSV/XLSX exports parse, respect filters and Petani ownership",
+      "status": "PASS"
+    },
+    {
+      "name": "Four notification types persisted; generation repeated without duplicate",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/auth/login",
+      "method": "POST",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/auth/login",
+      "method": "POST",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/auth/login",
+      "method": "POST",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/auth/login",
+      "method": "POST",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/auth/me",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/petani/1",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/petani",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/petani/5",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/petani/5",
+      "method": "PUT",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/petani/5",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman/3",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/tanaman/3",
+      "method": "PUT",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/tanaman/3",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/bibit",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/bibit/3",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/bibit/3",
+      "method": "PUT",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/bibit/3",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/lahan",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/lahan/4",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/lahan/4",
+      "method": "PUT",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/lahan/4",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/siklus-tanam",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/siklus-tanam/6",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/siklus-tanam/6",
+      "method": "PUT",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/siklus-tanam/6",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/aktivitas-pertanian",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/aktivitas-pertanian/5",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/aktivitas-pertanian/5",
+      "method": "PUT",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/aktivitas-pertanian/5",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/panen",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/panen/4",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/panen/4",
+      "method": "PUT",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/panen/4",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/panen/4",
+      "method": "DELETE",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/panen/4",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/aktivitas-pertanian/5",
+      "method": "DELETE",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/aktivitas-pertanian/5",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/siklus-tanam/6",
+      "method": "DELETE",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/siklus-tanam/6",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/lahan/4",
+      "method": "DELETE",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/lahan/4",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/bibit/3",
+      "method": "DELETE",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/bibit/3",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/tanaman/3",
+      "method": "DELETE",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/tanaman/3",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/petani/5",
+      "method": "DELETE",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/petani/5",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/tanaman?search=Pagination%201791045951451&limit=10&page=1&sort_by=id&sort_order=ASC",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/tanaman?search=Pagination%201791045951451&limit=10&page=2&sort_by=id&sort_order=ASC",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/products",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/products",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/products/1",
+      "method": "PUT",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/products/1",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/posts",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/posts",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/posts/1",
+      "method": "PUT",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/posts/1",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/lahan",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/siklus-tanam",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/aktivitas-pertanian",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/aktivitas-pertanian",
+      "method": "POST",
+      "status": 400,
+      "expected": 400
+    },
+    {
+      "path": "/lahan/2",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/lahan?petani_id=2&limit=100",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/siklus-tanam/2",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/siklus-tanam?petani_id=2&limit=100",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/aktivitas-pertanian/2",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/aktivitas-pertanian?petani_id=2&limit=100",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/lahan/2",
+      "method": "PUT",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/siklus-tanam/2",
+      "method": "PUT",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/aktivitas-pertanian/2",
+      "method": "PUT",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/petani",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/petani",
+      "method": "POST",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/petani/1",
+      "method": "PUT",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/petani/1",
+      "method": "DELETE",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/tanaman",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/tanaman",
+      "method": "POST",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/tanaman/1",
+      "method": "PUT",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/tanaman/1",
+      "method": "DELETE",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/bibit",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/bibit",
+      "method": "POST",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/bibit/1",
+      "method": "PUT",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/bibit/1",
+      "method": "DELETE",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/lahan",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/lahan",
+      "method": "POST",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/lahan/1",
+      "method": "PUT",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/lahan/1",
+      "method": "DELETE",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/panen",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/panen",
+      "method": "POST",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/panen/1",
+      "method": "PUT",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/panen/1",
+      "method": "DELETE",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/siklus-tanam",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/siklus-tanam",
+      "method": "POST",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/siklus-tanam/1",
+      "method": "PUT",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/siklus-tanam/1",
+      "method": "DELETE",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/aktivitas-pertanian",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/aktivitas-pertanian",
+      "method": "POST",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/aktivitas-pertanian/1",
+      "method": "PUT",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/aktivitas-pertanian/1",
+      "method": "DELETE",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/auth/users",
+      "method": "GET",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/auth/pending-users",
+      "method": "GET",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/dashboard/admin?start_date=2026-10-01&end_date=2026-10-03",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/reminders",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/reminders",
+      "method": "POST",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "path": "/notifications/1/read",
+      "method": "PUT",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/notifications?limit=100",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    }
+  ],
+  "created": [
+    {
+      "path": "petani",
+      "id": 5
+    },
+    {
+      "path": "tanaman",
+      "id": 3
+    },
+    {
+      "path": "bibit",
+      "id": 3
+    },
+    {
+      "path": "lahan",
+      "id": 4
+    },
+    {
+      "path": "siklus-tanam",
+      "id": 6
+    },
+    {
+      "path": "aktivitas-pertanian",
+      "id": 5
+    },
+    {
+      "path": "panen",
+      "id": 4
+    },
+    {
+      "path": "tanaman",
+      "id": 4
+    },
+    {
+      "path": "tanaman",
+      "id": 5
+    },
+    {
+      "path": "tanaman",
+      "id": 6
+    },
+    {
+      "path": "tanaman",
+      "id": 7
+    },
+    {
+      "path": "tanaman",
+      "id": 8
+    },
+    {
+      "path": "tanaman",
+      "id": 9
+    },
+    {
+      "path": "tanaman",
+      "id": 10
+    },
+    {
+      "path": "tanaman",
+      "id": 11
+    },
+    {
+      "path": "tanaman",
+      "id": 12
+    },
+    {
+      "path": "tanaman",
+      "id": 13
+    },
+    {
+      "path": "tanaman",
+      "id": 14
+    },
+    {
+      "path": "tanaman",
+      "id": 15
+    },
+    {
+      "path": "tanaman",
+      "id": 16
+    },
+    {
+      "path": "tanaman",
+      "id": 17
+    },
+    {
+      "path": "tanaman",
+      "id": 18
+    },
+    {
+      "path": "tanaman",
+      "id": 19
+    },
+    {
+      "path": "tanaman",
+      "id": 20
+    },
+    {
+      "path": "tanaman",
+      "id": 21
+    },
+    {
+      "path": "tanaman",
+      "id": 22
+    },
+    {
+      "path": "tanaman",
+      "id": 23
+    },
+    {
+      "path": "tanaman",
+      "id": 24
+    },
+    {
+      "path": "products",
+      "id": 1
+    },
+    {
+      "path": "posts",
+      "id": 1
+    },
+    {
+      "path": "lahan",
+      "id": 5
+    },
+    {
+      "path": "siklus-tanam",
+      "id": 7
+    },
+    {
+      "path": "aktivitas-pertanian",
+      "id": 6
+    },
+    {
+      "path": "reminders",
+      "id": 7
+    },
+    {
+      "path": "reminders",
+      "id": 8
+    }
+  ],
+  "retained": "Public demo content, pagination fixtures and Ratna runtime reminders retained for browser checks; no pre-existing record deleted."
+}

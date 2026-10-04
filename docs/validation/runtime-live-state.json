@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-03T17:09:08.221Z",
+  "database": "tanimaju_demo_20261003_final5",
+  "status": "PASS",
+  "frontend": 200,
+  "backend": 200,
+  "petaniBadge": "Notifikasi, 4 belum dibaca",
+  "exceptions": [],
+  "networkUnexpected": []
+}

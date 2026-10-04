@@ -1,0 +1,120 @@
+{
+  "database": "tanimaju_demo_20261003_final5",
+  "preparedAt": "2026-10-03T17:02:37.534Z",
+  "preparedWIB": "2026-10-04 00:02:37",
+  "deleted": [
+    {
+      "table": "tanaman",
+      "id": 4
+    },
+    {
+      "table": "tanaman",
+      "id": 5
+    },
+    {
+      "table": "tanaman",
+      "id": 6
+    },
+    {
+      "table": "tanaman",
+      "id": 7
+    },
+    {
+      "table": "tanaman",
+      "id": 8
+    },
+    {
+      "table": "tanaman",
+      "id": 9
+    },
+    {
+      "table": "tanaman",
+      "id": 10
+    },
+    {
+      "table": "tanaman",
+      "id": 11
+    },
+    {
+      "table": "tanaman",
+      "id": 12
+    },
+    {
+      "table": "tanaman",
+      "id": 13
+    },
+    {
+      "table": "tanaman",
+      "id": 14
+    },
+    {
+      "table": "tanaman",
+      "id": 15
+    },
+    {
+      "table": "tanaman",
+      "id": 16
+    },
+    {
+      "table": "tanaman",
+      "id": 17
+    },
+    {
+      "table": "tanaman",
+      "id": 18
+    },
+    {
+      "table": "tanaman",
+      "id": 19
+    },
+    {
+      "table": "tanaman",
+      "id": 20
+    },
+    {
+      "table": "tanaman",
+      "id": 21
+    },
+    {
+      "table": "tanaman",
+      "id": 22
+    },
+    {
+      "table": "tanaman",
+      "id": 23
+    },
+    {
+      "table": "tanaman",
+      "id": 24
+    },
+    {
+      "table": "panen",
+      "id": 6,
+      "provenance": "Second browser pass dummy sentinel created at 2026-10-03T16:56:11.000Z; ID 5 edited/deleted by retry; no pre-existing row removed."
+    }
+  ],
+  "showcaseCycle": 9,
+  "notificationTypes": [
+    {
+      "type": "jadwal_tanam",
+      "n": 1
+    },
+    {
+      "type": "perkiraan_panen",
+      "n": 1
+    },
+    {
+      "type": "pemupukan",
+      "n": 1
+    },
+    {
+      "type": "pengobatan",
+      "n": 1
+    }
+  ],
+  "pending": {
+    "email": "agus@demo.tanimaju.test",
+    "status": "pending"
+  },
+  "preserved": "All pre-existing fixture/user records and all read history; existing development database untouched."
+}

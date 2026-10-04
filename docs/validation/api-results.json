@@ -1,0 +1,96 @@
+{
+  "database": "tanimaju_demo_20261003_final5",
+  "engine": "8.0.44",
+  "checkedAt": "2026-10-03T15:54:21.385Z",
+  "migrations": [
+    "001_initial_schema.sql",
+    "002_add_user_status.sql",
+    "003_add_session_columns.sql",
+    "004_add_product_ratings.sql",
+    "005_migrate_legacy_product_ratings.sql",
+    "006_expand_user_roles.sql",
+    "007_link_users_to_petani.sql",
+    "008_create_lahan.sql",
+    "009_add_panen_lahan_id.sql",
+    "010_create_siklus_tanam.sql",
+    "011_create_aktivitas_pertanian.sql",
+    "012_link_panen_to_siklus_tanam.sql",
+    "013_create_notifications_and_activity_reminders.sql"
+  ],
+  "tables": 16,
+  "checks": [
+    {
+      "name": "Fresh migration 001-013 and 16 tables",
+      "status": "PASS"
+    },
+    {
+      "name": "Register creates pending account; pending cannot login; admin approval",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin Petani create/read/update and explicit account link",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin Tanaman and Bibit create/read/update",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin Lahan create/read/update",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin/Petani Siklus create/read/update on actual schema",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin/Petani Aktivitas create/read/update",
+      "status": "PASS"
+    },
+    {
+      "name": "Date validation rejects activity before planting",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin Panen create/read/update (legacy and cycle link)",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin and personal dashboards run aggregate SQL",
+      "status": "PASS"
+    },
+    {
+      "name": "Ownership: list/detail/update/create scope cannot reach Petani B",
+      "status": "PASS"
+    },
+    {
+      "name": "Penyuluh reads agricultural data, cannot invoke admin/farming actions",
+      "status": "PASS"
+    },
+    {
+      "name": "All five reports CSV/XLSX; Petani cannot export B even with injected filter",
+      "status": "PASS"
+    },
+    {
+      "name": "Explicit pemupukan/pengobatan schedules persist and obey ownership",
+      "status": "PASS"
+    },
+    {
+      "name": "Persistent four reminder types, unique-key dedup across connections",
+      "status": "PASS"
+    },
+    {
+      "name": "Notification unread count/read/read-all persist; cross-user read denied",
+      "status": "PASS"
+    },
+    {
+      "name": "Logout clears cookie and unauthenticated /me is rejected",
+      "status": "PASS"
+    }
+  ],
+  "limitations": [
+    "No successful DELETE executed: no destructive operations authorized.",
+    "Browser evidence is recorded separately.",
+    "Demo accounts use public dummy credentials."
+  ]
+}

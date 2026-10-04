@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-03T16:24:42.297Z",
+  "database": "tanimaju_demo_20261003_final5",
+  "browser": "Chrome headless",
+  "destination": ".validation/downloads/",
+  "checks": [
+    {
+      "format": "csv",
+      "status": "PASS",
+      "bytes": 363,
+      "completed": true
+    },
+    {
+      "format": "xlsx",
+      "status": "PASS",
+      "bytes": 10118,
+      "completed": true
+    }
+  ]
+}
