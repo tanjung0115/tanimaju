@@ -187,4 +187,4 @@ docs/              screenshots dan bukti validation
 
 Prioritas berikutnya: memperjelas kebijakan data publik, revocation/session enforcement, lint legacy, dependency/security review, observability scheduler, storage upload dan bundle optimization. PDF, email/WhatsApp notification, multi-instance job queue, CI end-to-end, serta editor siklus/aktivitas lengkap di UI belum dibuat. Tidak ada penambahan fitur pada final pass ini.
 
-[Narasi interview/summary recruiter](INTERVIEW-NOTES.md) dan bukti pada [docs/validation](docs/validation/README.md) membantu menjelaskan project tanpa mengklaim kontribusi pribadi atau kepemilikan seluruh codebase yang belum dikonfirmasi.
+Bukti pada [docs/validation](docs/validation/README.md) membantu menjelaskan project tanpa mengklaim kontribusi pribadi atau kepemilikan seluruh codebase yang belum dikonfirmasi.

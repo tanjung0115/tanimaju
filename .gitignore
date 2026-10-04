@@ -32,6 +32,7 @@ user-migration.sql
 !.env.*.example
 backend/uploads/
 .validation/
+INTERVIEW-NOTES.md
 
 # Temporary browser failure captures; final demo screenshots remain versioned.
 docs/screenshots/runtime/failure-*.png
