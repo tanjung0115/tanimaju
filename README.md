@@ -1,12 +1,12 @@
 # TaniMaju
 
-Validasi runtime terbaru (4 Oktober 2026): [LOCAL-RUNTIME-VALIDATION.md](LOCAL-RUNTIME-VALIDATION.md). Frontend demo berjalan di http://localhost:5180 dengan database demo terpisah; akun dan cara menjalankan ulang tersedia dalam laporan.
+Validasi runtime terbaru (3-4 Oktober 2026): [bukti validasi](docs/validation/README.md). Demo lokal menggunakan frontend `http://localhost:5180` dan API `http://localhost:5310` dengan database demo terpisah.
 
 ## Overview
 
 TaniMaju adalah aplikasi full-stack untuk pengelolaan pertanian desa, dengan website publik dan dashboard operasional. Fokus engineering mencakup autentikasi, role-based access, pembatasan data berdasarkan pemilik, relasi data pertanian, laporan, serta notifikasi dalam aplikasi.
 
-**Status:** siap untuk portfolio dan demo lokal menggunakan database demo lengkap. Ini bukan klaim production-ready. Bukti pengujian, batas cakupan, dan status database existing ada di [FINAL-VALIDATION.md](FINAL-VALIDATION.md).
+**Status:** siap untuk portfolio dan demo lokal menggunakan database demo lengkap. Ini bukan klaim production-ready. Bukti pengujian dan batas cakupan ada di [docs/validation](docs/validation/README.md).
 
 ## Problem
 
@@ -57,7 +57,7 @@ Ownership mengikuti `User -> Petani -> Lahan -> Siklus Tanam -> Aktivitas Pertan
 | Penyuluh | Baca data pertanian dan laporan; tidak membuka dashboard/Admin approval atau menulis farming |
 | user | Role legacy dipertahankan; tidak otomatis mendapat izin API Petani |
 
-CRUD master/Panen dan penghapusan farming tetap Admin. **Panen Saya** tersedia sebagai panel di dashboard Petani; tidak ada halaman CRUD Panen khusus Petani. Beberapa GET master/Panen legacy masih publik: pembatasan Petani yang sedang login bukan kebijakan privasi menyeluruh untuk data tersebut. Detail ini dicatat di [TECHNICAL-DEBT.md](TECHNICAL-DEBT.md).
+CRUD master/Panen dan penghapusan farming tetap Admin. **Panen Saya** tersedia sebagai panel di dashboard Petani; tidak ada halaman CRUD Panen khusus Petani. Beberapa GET master/Panen legacy masih publik: pembatasan Petani yang sedang login bukan kebijakan privasi menyeluruh untuk data tersebut. Batasan keamanan dan kesiapan deployment diringkas pada bagian Security di bawah.
 
 ## Screenshots
 
@@ -81,14 +81,15 @@ Screenshot berasal dari browser aplikasi yang berjalan dengan **data fiktif** pa
 Prasyarat: Node.js 22/24, npm, MySQL 8 yang berjalan. Versi engine lain belum mendapat fresh DDL validation dalam pass ini.
 
 ```powershell
-# Root project
+# Root project: frontend
 npm ci
 # Backend
 cd backend
 npm ci
+cd ..
 ```
 
-Untuk setup baru, salin `.env.example` pada root dan backend menjadi `.env` di masing-masing folder. Jika sudah ada `.env`, tambahkan key yang diperlukan tanpa menimpanya. Setelah environment dan migration siap, jalankan `npm run dev` di backend dan root dalam dua terminal. Untuk backend hasil build: jalankan `npm run build` lalu `npm start` dari folder backend.
+Untuk setup baru, salin `.env.frontend.example` menjadi `.env` di root dan `backend/.env.example` menjadi `backend/.env`. Jika sudah ada `.env`, tambahkan key yang diperlukan tanpa menimpanya. Setelah environment dan migration siap, jalankan `npm run dev` dari backend dan root dalam dua terminal. Untuk demo dengan port yang digunakan oleh screenshot, jalankan `scripts/start-local-demo.ps1 -Target backend` dan `scripts/start-local-demo.ps1 -Target frontend` di dua terminal. Untuk backend hasil build: jalankan `npm run build` lalu `npm start` dari folder backend.
 
 ## Environment Setup
 
@@ -111,9 +112,10 @@ Reminder default: `REMINDERS_ENABLED=true`, interval 30 menit, jam 09:00 WIB, ca
 
 ## Database Migration
 
-Untuk **database baru/kosong**, atur target dari folder backend lalu gunakan canonical runner:
+Untuk **database baru/kosong**, jalankan dari folder backend dan gunakan canonical runner:
 
 ```powershell
+cd backend
 $env:MYSQL_DATABASE='tanimaju_demo_nama_unik_baru'
 npm run db:migrate
 ```
@@ -125,11 +127,13 @@ npm run build
 if ($LASTEXITCODE -eq 0) { node dist/database/migrate.js }
 ```
 
+Perintah alternatif di atas juga dijalankan dari folder `backend`.
+
 Migration 001-013 membuat master, users, rating, ownership, Lahan, Siklus, Aktivitas, jadwal dan notifications. Runner menyiapkan guard kolom melalui INFORMATION_SCHEMA dan mencatat migration berhasil. File SQL historis tidak diubah. DDL bisa auto-commit; kegagalan parsial perlu pemeriksaan sebelum retry.
 
-**Hasil validasi 3 Oktober 2026:** database `tanimaju_demo_20261003_final5` memiliki 13 migration, 16 tabel dan 17 foreign key. Database existing `website_tanijuu_mysql` tetap tidak dimigrasikan dan belum memiliki prasyarat farming/013. [Audit dependency dan prosedur backup/migration existing](FINAL-VALIDATION.md#migration).
+**Hasil validasi 3 Oktober 2026:** database `tanimaju_demo_20261003_final5` memiliki 13 migration, 16 tabel dan 17 foreign key. Database existing `website_tanijuu_mysql` tetap tidak dimigrasikan dan belum memiliki prasyarat farming/013. Detail hasil schema tersedia di [schema.json](docs/validation/schema.json).
 
-Fresh setup tidak membuat Admin otomatis. Provision Admin secara terkontrol dengan bcrypt, status approved dan is_active true. Untuk dataset portfolio lokal, tersedia [prosedur disposable demo](DEMO.md) yang membuat akun dummy melalui script opt-in. Script seed legacy tidak digunakan.
+Fresh setup tidak membuat Admin otomatis. Provision Admin secara terkontrol dengan bcrypt, status approved dan is_active true. Dataset portfolio memakai database demo terpisah dan script persiapan yang bersifat opt-in; jangan gunakan database existing berisi data pribadi.
 
 ## Testing
 
@@ -146,7 +150,7 @@ npm run test:mysql
 
 `npm test` menjalankan 16 test Tahap 8-11 dengan HTTP lokal dan mock/fixture; bukan bukti seluruh workflow memakai database nyata. Pass tambahan pada database baru menjalankan **17 kelompok real MySQL/HTTP checks**, disusul pengujian UI pada Chrome headless. Script integration menolak database tanpa prefix demo, memerlukan opt-in dan tidak menghapus data.
 
-[Checklist hasil API/browser](REGRESSION-CHECKLIST.md), [bukti JSON](docs/validation/) dan [laporan final](FINAL-VALIDATION.md) membedakan fixture, database nyata, browser otomatis serta pemeriksaan manual manusia. Lint penuh masih 35 error dan 9 warning legacy; tidak diklaim lulus.
+[Bukti JSON](docs/validation/) membedakan fixture, database nyata, browser otomatis serta pemeriksaan manual manusia. Lint dijalankan melalui `npm run lint`; hasil validasi runtime tidak menjadi klaim bahwa seluruh lint atau deployment production sudah lulus.
 
 ## Security
 
@@ -157,7 +161,7 @@ npm run test:mysql
 - CSV formula escape, batas baris/ukuran export; backend tidak menerima workbook upload.
 - Upload JPEG/PNG/WebP/GIF memakai batas ukuran, MIME/extension allowlist dan filename UUID; JSON body dibatasi dan header nosniff aktif.
 
-Keterbatasan meliputi revocation bearer JWT setelah logout, GET publik legacy, upload content inspection, rate limiting dan dependency review. Lihat [technical debt](TECHNICAL-DEBT.md) sebelum menggunakan data nyata atau deployment.
+Keterbatasan meliputi revocation bearer JWT setelah logout, GET publik legacy, upload content inspection, rate limiting dan dependency review. Jangan gunakan data nyata atau deploy ke production sebelum kontrol tersebut ditinjau.
 
 ## Project Structure
 
@@ -183,4 +187,4 @@ docs/              screenshots dan bukti validation
 
 Prioritas berikutnya: memperjelas kebijakan data publik, revocation/session enforcement, lint legacy, dependency/security review, observability scheduler, storage upload dan bundle optimization. PDF, email/WhatsApp notification, multi-instance job queue, CI end-to-end, serta editor siklus/aktivitas lengkap di UI belum dibuat. Tidak ada penambahan fitur pada final pass ini.
 
-[Demo 3-5 menit](DEMO.md) dan [narasi interview/summary recruiter](INTERVIEW-NOTES.md) membantu menjelaskan project tanpa mengklaim kontribusi pribadi atau kepemilikan seluruh codebase yang belum dikonfirmasi.
+[Narasi interview/summary recruiter](INTERVIEW-NOTES.md) dan bukti pada [docs/validation](docs/validation/README.md) membantu menjelaskan project tanpa mengklaim kontribusi pribadi atau kepemilikan seluruh codebase yang belum dikonfirmasi.
